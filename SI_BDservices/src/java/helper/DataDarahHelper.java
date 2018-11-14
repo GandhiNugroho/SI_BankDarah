@@ -30,7 +30,7 @@ public class DataDarahHelper {
      String pendonor,
      Date tanggalDonor,
      String alamatPendonor,
-     boolean status
+     String status
           
   ){
          Session session = NewHibernateUtil.getSessionFactory().openSession();
@@ -44,7 +44,7 @@ public class DataDarahHelper {
         List<DataDarah> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("from DataDarah where status='true'");
+        Query q = session.createQuery("from DataDarah where status='habis'");
         list = q.list();
         tx.commit();
         session.close();

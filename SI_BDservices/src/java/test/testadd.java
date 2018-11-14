@@ -25,7 +25,7 @@ public class testadd {
         String resus="negatif";
         String pendonor="Susanto";
          String alamatPendonor="laki-laki";
-         boolean status=true;
+         String status="habis";
          DataDarahHelper helper=new DataDarahHelper();
         helper.addNewDataDarah(idDarah,golonganDarah, resus, pendonor, date, alamatPendonor,status);
         
