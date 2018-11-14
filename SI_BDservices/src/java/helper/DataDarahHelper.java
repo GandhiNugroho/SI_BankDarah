@@ -10,7 +10,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import Pojos.DataDarah;
+import pojos.DataDarah;
 import Utility.NewHibernateUtil;
 
 /**
@@ -29,12 +29,13 @@ public class DataDarahHelper {
      String resus,
      String pendonor,
      Date tanggalDonor,
-     String alamatPendonor
-
+     String alamatPendonor,
+     boolean status
+          
   ){
          Session session = NewHibernateUtil.getSessionFactory().openSession();
            Transaction tx = session.beginTransaction();
-           DataDarah datadarah=new DataDarah(idDarah,golonganDarah,resus,pendonor,tanggalDonor,alamatPendonor);
+           DataDarah datadarah=new DataDarah(idDarah,golonganDarah,resus,pendonor,tanggalDonor,alamatPendonor,status);
            session.saveOrUpdate(datadarah);
            tx.commit();
            session.close();
@@ -43,7 +44,7 @@ public class DataDarahHelper {
         List<DataDarah> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("from DataDarah l");
+        Query q = session.createQuery("from DataDarah where status='true'");
         list = q.list();
         tx.commit();
         session.close();

@@ -5,7 +5,7 @@
  */
 package test;
 
-import Pojos.DataDarah;
+import pojos.DataDarah;
 import com.google.gson.Gson;
 import helper.DataDarahHelper;
 import java.util.List;
