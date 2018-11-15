@@ -12,11 +12,14 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import pojos.DataDarah;
+import helper.DataDarahHelper;
 
 /**
  * REST Web Service
@@ -60,5 +63,16 @@ public class SI_BDResource {
                 .header("Access-Preflight-Maxage", "20")
                 .build();
     }
+    
+    @POST
+@Path("addDarah")
+ @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+public Response AddNewPasien(String data){
+    Gson gson=new Gson();
+    DataDarah datadarah= gson.fromJson(data,DataDarah.class);
+    DataDarahHelper helper=new DataDarahHelper();
+    helper.addNewDataDarah(datadarah.getIdDarah(),datadarah.getGolonganDarah(),datadarah.getResus(),datadarah.getPendonor(),datadarah.getTanggalDonor(),datadarah.getAlamatPendonor(),datadarah.getStatus());
+    return Response.status(200).entity(datadarah).build();
+}
       
 }
