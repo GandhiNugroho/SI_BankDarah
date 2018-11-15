@@ -44,7 +44,7 @@ public class DataDarahHelper {
         List<DataDarah> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("from DataDarah where status='habis'");
+        Query q = session.createQuery("from DataDarah p");
         list = q.list();
         tx.commit();
         session.close();

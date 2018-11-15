@@ -40,9 +40,10 @@ public class SI_BDResource {
 
     /**
      * Retrieves representation of an instance of RSS.SI_BDResource
+     *
      * @return an instance of java.lang.String
      */
-       @GET
+    @GET
     @Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
     public Response getJson() {
         //TODO return proper representation object
@@ -63,16 +64,23 @@ public class SI_BDResource {
                 .header("Access-Preflight-Maxage", "20")
                 .build();
     }
-    
+
     @POST
-@Path("addDarah")
- @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
-public Response AddNewPasien(String data){
-    Gson gson=new Gson();
-    DataDarah datadarah= gson.fromJson(data,DataDarah.class);
-    DataDarahHelper helper=new DataDarahHelper();
-    helper.addNewDataDarah(datadarah.getIdDarah(),datadarah.getGolonganDarah(),datadarah.getResus(),datadarah.getPendonor(),datadarah.getTanggalDonor(),datadarah.getAlamatPendonor(),datadarah.getStatus());
-    return Response.status(200).entity(datadarah).build();
-}
-      
+    @Path("addDarah")
+    @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+    public Response AddNewDarah(String data) {
+        Gson gson = new Gson();
+        DataDarah datadarah = gson.fromJson(data, DataDarah.class);
+        DataDarahHelper helper = new DataDarahHelper();
+        helper.addNewDataDarah(datadarah.getIdDarah(),
+                datadarah.getGolonganDarah(),
+                datadarah.getResus(),
+                datadarah.getPendonor(),
+                datadarah.getTanggalDonor(),
+                datadarah.getAlamatPendonor(),
+                datadarah.getStatus());
+        return Response.status(200).entity(datadarah).build();
+    }
+
+
 }
