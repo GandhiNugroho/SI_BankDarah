@@ -18,31 +18,31 @@ import pojos.Pesanan;
  * @author asus
  */
 public class PesananHelper {
-    public PesananHelper(){
-        
+
+    public PesananHelper() {
+
     }
 
+    public void addNewPesanan(
+            int idPesanan,
+            Date tanggalPesan,
+            Date tanggalKirim,
+            int idDarah,
+            String golonganDarah,
+            String resus,
+            String pendonor,
+            Date tanggalDonor,
+            String alamatPendonor
+    ) {
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        Pesanan pesanan = new Pesanan(idPesanan, tanggalPesan, tanggalKirim, idDarah, golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor);
+        session.saveOrUpdate(pesanan);
+        tx.commit();
+        session.close();
+    }
 
-  public void addNewPesanan(
-        int idPesanan,
-     Date tanggalPesan,
-     Date tanggalKirim,
-     Integer idDarah,
-     String golonganDarah,
-     String resus,
-     String pendonor,
-     Date tanggalDonor,
-     String alamatPendonor
-          
-  ){
-         Session session = NewHibernateUtil.getSessionFactory().openSession();
-           Transaction tx = session.beginTransaction();
-           Pesanan pesanan=new Pesanan(idPesanan,tanggalPesan, tanggalKirim, idDarah, golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor);
-           session.saveOrUpdate(pesanan);
-           tx.commit();
-           session.close();
-  }
-  public List<Pesanan> bacaSemuaPesanan() {
+    public List<Pesanan> bacaSemuaPesanan() {
         List<Pesanan> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
@@ -52,6 +52,5 @@ public class PesananHelper {
         session.close();
         return list;
 
-        
     }
 }
