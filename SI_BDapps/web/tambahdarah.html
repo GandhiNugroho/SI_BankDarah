@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <!------ Include the above in your HEAD tag ---------->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <style>
+
+            *[role="form"] {
+                max-width: 530px;
+                padding: 15px;
+                margin: 0 auto;
+                border-radius: 0.3em;
+                background-color: #f2f2f2;
+            }
+
+            *[role="form"] h2 { 
+                font-family: 'Open Sans' , sans-serif;
+                font-size: 40px;
+                font-weight: 600;
+                color: #000000;
+                margin-top: 5%;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <form class="form-horizontal" role="form" onsubmit="return make_json(this)" method="POST">
+                <h2>Tambah Darah</h2>
+                <div class="form-group">
+                    <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="ID_Darah" placeholder="Id Darah" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Golongan_Darah" class="col-sm-3 control-label">Golongan Darah</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Golongan_Darah" placeholder="Golongan Darah" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Resus" class="col-sm-3 control-label">Resus</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Resus" placeholder="Resus" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Pendonor" class="col-sm-3 control-label">Pendonor</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Pendonor" placeholder="Pendonor" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Tanggal_Donor" class="col-sm-3 control-label">Tanggal Donor</label>
+                    <div class="col-sm-9">
+                        <input type="date" name="Tanggal_Donor" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Alamat_Pendonor" class="col-sm-3 control-label">Alamat Pendonor</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Alamat_Pendonor" placeholder="Alamat Pendonor" class="form-control" autofocus>
+                    </div>
+                </div>
+            
+                
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            
+                <pre id="output">
+
+                </pre>
+                <script>
+                  function make_json(form) {
+                    var json = {
+                      "ID_Darah": form.ID_Darah.value,
+                      "Golongan_Darah": form.Golongan_Darah.value,
+                      "Resus": form.Resus.value,
+                      "Pendonor": form.Pendonor.value,
+                      "Tanggal_Donor": form.Tanggal_Donor.value,
+                      "Alamat_Pendonor": form.Alamat_Pendonor.value
+                  
+                    };
+
+                    var html = JSON.stringify(json, 0, 100);
+                    var Url = "http://202.94.83.190:8080/SI_BDservices/webresources/SI_BD/addDarah";
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", Url, false);
+                    xhr.setRequestHeader("Content-type", "application/json");
+                    xhr.send(html);
+
+                    document.getElementById("output").innerHTML = html;
+                    return false;
+                  }
+                </script>
+            
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+    </body>
+</html>
