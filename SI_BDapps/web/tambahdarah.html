@@ -66,7 +66,7 @@ and open the template in the editor.
                 <div class="form-group">
                     <label for="Tanggal_Donor" class="col-sm-3 control-label">Tanggal Donor</label>
                     <div class="col-sm-9">
-                        <input type="date" name="Tanggal_Donor" class="form-control">
+                        <input type="text" name="Tanggal_Donor" placeholder="Tanggal_Donor" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
@@ -75,23 +75,31 @@ and open the template in the editor.
                         <input type="text" name="Alamat_Pendonor" placeholder="Alamat Pendonor" class="form-control" autofocus>
                     </div>
                 </div>
-            
-                
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-            
-                <pre id="output">
+                <div class="form-group">
+                    <label for="Status" class="col-sm-3 control-label">Status</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Status" placeholder="Status" class="form-control" autofocus>
+                    </div>
+                </div>
 
-                </pre>
-                <script>
-                  function make_json(form) {
+
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+            </form> <!-- /form -->
+            <pre id="output">
+
+            </pre>
+            <script>
+                function make_json(form) {
                     var json = {
-                      "ID_Darah": form.ID_Darah.value,
-                      "Golongan_Darah": form.Golongan_Darah.value,
-                      "Resus": form.Resus.value,
-                      "Pendonor": form.Pendonor.value,
-                      "Tanggal_Donor": form.Tanggal_Donor.value,
-                      "Alamat_Pendonor": form.Alamat_Pendonor.value
-                  
+                        "idDarah": parseInt(form.ID_Darah.value, 10),
+                        "golonganDarah": form.Golongan_Darah.value,
+                        "resus": form.Resus.value,
+                        "pendonor": form.Pendonor.value,
+                        "tanggalDonor": form.Tanggal_Donor.value,
+                        "alamatPendonor": form.Alamat_Pendonor.value,
+                        "status": form.Status.value
+
                     };
 
                     var html = JSON.stringify(json, 0, 100);
@@ -103,10 +111,8 @@ and open the template in the editor.
 
                     document.getElementById("output").innerHTML = html;
                     return false;
-                  }
-                </script>
-            
-            </form> <!-- /form -->
+                }
+            </script>
         </div> <!-- ./container -->
     </body>
 </html>
