@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(RSS.SI_BDResource.class);
+        resources.add(RSS.UserResource.class);
     }
     
 }
