@@ -30,72 +30,123 @@ and open the template in the editor.
                 text-transform: uppercase;
                 letter-spacing: 4px;
             }
+                table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 40%;
+                    border: 1px;
+
+                }
+
+                td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 10px;
+                    position: relative;
+                    right:-490px;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #dddddd;
+                }
 
 
-        </style>
-    </head>
-    <body>
-        <br>
+
+
+            </style>
+        </head>
+        <body>
+            <br>
+
+        <div id="id01"></div>
+        <script>
+            var table;
+
+
+          
+                var xmlhttp = new XMLHttpRequest();
+
+                var url = "http://localhost:8084/SI_BDservices/webresources/SI_BD";
+
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this.responseText);
+                    }
+                }
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+
+                function myFunction(response) {
+                    var arr = JSON.parse(response);
+                    var i;
+                    var out = "<table id='table'><tr><th>ID DARAH</th><th>GOLONGAN DARAH</th><th>RESUS</th><th>PENDONOR</th><th>TANGGAL DONOR</th><th>ALAMAT PENDONOR</th><th>STATUS</th></tr>";
+
+                    for (i = 0; i < arr.length; i++) {
+                        out += "<tr><td>" +
+                                arr[i].idDarah +
+                                "</td><td>" +
+                                arr[i].golonganDarah +
+                                "</td><td>" +
+                                arr[i].resus +
+                                "</td><td>" +
+                                arr[i].pendonor +
+                                "</td><td>" +
+                                arr[i].tanggalDonor +
+                                "</td><td>" +
+                                arr[i].alamatPendonor +
+                                "</td><td>" +
+                                arr[i].status;
+
+                    }
+
+
+                    out += "</table>";
+                    document.getElementById("id01").innerHTML = out;
+                    table = document.getElementById('table');
+                    console.log(table.rows.length);
+                    $('#table tr').on('click', function () {
+                        console.log('OKKK');
+                        $("#idDarah").val($(this).find("td").eq(0).html());
+                        $("#nama").val($(this).find("td").eq(1).html());
+                        $("#spesialis").val($(this).find("td").eq(2).html());
+                    });
+                }
+            
+        </script>
         <div class="container">
             <form class="form-horizontal" role="form">
                 <h2>Pesan Darah</h2>
                 <div class="form-group">
                     <label for="idpesanan" class="col-sm-3 control-label">Id Pesanan</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Id Pesanan" class="form-control" autofocus>
+                        <input type="text" id="ID_Pesanan" placeholder="Id Pesanan" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="tanggalpesan" class="col-sm-3 control-label">Tanggal Pesan</label>
+                    <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
                     <div class="col-sm-9">  
-                        <input type="date" id="tanggalpesan" class="form-control">
+                        <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="tanggalkirim" class="col-sm-3 control-label">Tanggal Kirim</label>
+                    <label for="Nama_RS" class="col-sm-3 control-label">Nama RS</label>
                     <div class="col-sm-9">
-                        <input type="date" id="tanggalkirim" class="form-control">
+                        <input type="text" id="Nama_Rs" placeholder="Nama RS" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="iddarah" class="col-sm-3 control-label">Id Darah</label>
+                    <label for="Alamat_RS" class="col-sm-3 control-label">Alamat RS</label>
                     <div class="col-sm-9">
-                        <input type="text" id="iddarah" placeholder="Id Darah" class="form-control" autofocus>
+                        <input type="text" id="Alamat_RS" placeholder="Alamat RS" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="golongandarah" class="col-sm-3 control-label">Golongan Darah</label>
+                    <label for="Tanggal_Pesan" class="col-sm-3 control-label">Tanggal Pesan</label>
                     <div class="col-sm-9">
-                        <input type="text" id="golongandarah" placeholder="Golongan Darah" class="form-control" autofocus>
+                        <input type="text" id="Tanggal_Pesan" placeholder="Tanggal Pesan" class="form-control" autofocus>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="resus" class="col-sm-3 control-label">Resus</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="resus" placeholder="Resus" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="pendonor" class="col-sm-3 control-label">Pendonor</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="pendonor" placeholder="Pendonor" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="tanggaldonor" class="col-sm-3 control-label">Tanggal Donor</label>
-                    <div class="col-sm-9">
-                        <input type="date" id="tanggaldonor" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="alamatpendonor" class="col-sm-3 control-label">Alamat Pendonor</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="alamatpendonor" placeholder="Alamat Pendonor" class="form-control" autofocus>
-                    </div>
-                </div>
-            
-                
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form> <!-- /form -->
         </div> <!-- ./container -->
     </body>
