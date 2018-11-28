@@ -1,36 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 14, 2018 3:30:08 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Nov 28, 2018 7:59:38 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojos.Pesanan" table="Pesanan" catalog="db165314097" optimistic-lock="version">
-        <id name="idPesanan" type="int">
-            <column name="ID_Pesanan" />
+        <id name="idPesanan" type="long">
+            <column name="ID_Pesanan" precision="11" scale="0" />
             <generator class="assigned" />
         </id>
+        <property name="idDarah" type="int">
+            <column name="ID_Darah" precision="6" scale="0" not-null="true" />
+        </property>
+        <property name="namaRs" type="string">
+            <column name="Nama_RS" length="120" not-null="true" />
+        </property>
+        <property name="alamatRs" type="string">
+            <column name="Alamat_RS" length="120" not-null="true" />
+        </property>
         <property name="tanggalPesan" type="date">
             <column name="Tanggal_Pesan" length="10" not-null="true" />
         </property>
-        <property name="tanggalKirim" type="date">
-            <column name="Tanggal_Kirim" length="10" not-null="true" />
-        </property>
-        <property name="idDarah" type="java.lang.Integer">
-            <column name="ID_Darah" />
-        </property>
-        <property name="golonganDarah" type="string">
-            <column name="Golongan_Darah" length="2" />
-        </property>
-        <property name="resus" type="string">
-            <column name="Resus" length="8" />
-        </property>
-        <property name="pendonor" type="string">
-            <column name="Pendonor" length="32" />
-        </property>
-        <property name="tanggalDonor" type="date">
-            <column name="Tanggal_Donor" length="10" />
-        </property>
-        <property name="alamatPendonor" type="string">
-            <column name="Alamat_Pendonor" length="60" />
+        <property name="statusPesanan" type="string">
+            <column name="Status_Pesanan" length="20" />
         </property>
     </class>
 </hibernate-mapping>

@@ -31,11 +31,12 @@ public class DataDarahHelper {
      Date tanggalDonor,
      String alamatPendonor,
      String status
+         
           
   ){
          Session session = NewHibernateUtil.getSessionFactory().openSession();
            Transaction tx = session.beginTransaction();
-           DataDarah datadarah=new DataDarah(idDarah,golonganDarah,resus,pendonor,tanggalDonor,alamatPendonor,status);
+           DataDarah datadarah=new DataDarah(idDarah, golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor, status);
            session.saveOrUpdate(datadarah);
            tx.commit();
            session.close();
@@ -52,5 +53,8 @@ public class DataDarahHelper {
 
         
     }
+  public void updateDataDarah(){
+      
+  }
 }
      

@@ -19,19 +19,15 @@ public class testaddpesanan {
 
     public static void main(String[] args) {
         try {
-
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-            Date tanggaldonor = format.parse("19820719");
-            Date tanggalpesan = format.parse("20181120");
-            Date tanggalkirim = format.parse("20181122");
-            int idPesanan = 1;
-            int idDarah = 2;
-            String golonganDarah = "O";
-            String resus = "Positif";
-            String pendonor = "Aseng";
-            String alamatPendonor = "jln.Buntu";
+            Date tanggalPesan= format.parse("20181126");
+            int idPesanan=1;
+            int idDarah=1;
+            String namaRs="Bunda dan Anak";
+            String alamatRs="Jln.Singkarak";
+            String status="Ditolak";
             PesananHelper helper = new PesananHelper();
-            helper.addNewPesanan(idPesanan, tanggalpesan, tanggalkirim, idDarah, golonganDarah, resus, pendonor, tanggaldonor, alamatPendonor);
+            helper.addNewPesanan(idPesanan, idDarah, namaRs, alamatRs, tanggalPesan,status);
 
         } catch (ParseException ex) {
 

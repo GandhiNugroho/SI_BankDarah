@@ -25,18 +25,15 @@ public class PesananHelper {
 
     public void addNewPesanan(
             int idPesanan,
-            Date tanggalPesan,
-            Date tanggalKirim,
             int idDarah,
-            String golonganDarah,
-            String resus,
-            String pendonor,
-            Date tanggalDonor,
-            String alamatPendonor
+            String namaRs,
+            String alamatRs,
+            Date tanggalPesan,
+            String statusPesanan
     ) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Pesanan pesanan = new Pesanan(idPesanan, tanggalPesan, tanggalKirim, idDarah, golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor);
+        Pesanan pesanan = new Pesanan(idPesanan, idDarah, namaRs, alamatRs, tanggalPesan, statusPesanan);
         session.saveOrUpdate(pesanan);
         tx.commit();
         session.close();

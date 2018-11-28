@@ -41,8 +41,8 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="db165314097"/>
-  <table-filter match-name="User"/>
-  <table-filter match-name="Data_Darah"/>
   <table-filter match-name="Pengiriman"/>
+  <table-filter match-name="Data_Darah"/>
   <table-filter match-name="Pesanan"/>
+  <table-filter match-name="User"/>
 </hibernate-reverse-engineering>
