@@ -140,8 +140,7 @@ and open the template in the editor.
 
 
                     var xmlhttp = new XMLHttpRequest();
-
-                    var url = "http://localhost:8084/SI_BDservices/webresources/SI_BD";
+                    var url= "http://202.94.83.190:8080/SI_BDservices/webresources/SI_BD";
 
                     xmlhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
@@ -181,25 +180,20 @@ and open the template in the editor.
                         console.log(table.rows.length);
                         $('#table tr').on('click', function () {
                             console.log('OKKK');
-                            $("#ID_Pesanan").val($(this).find("td").eq(0).html());
+                            $("#ID_Darah").val($(this).find("td").eq(0).html());
                            
                         });
                     }
 
                 </script>
+                <br>
                 <div class="container">
                     <form class="form-horizontal" role="form">
                         <h2>Pesan Darah</h2>
                         <div class="form-group">
-                            <label for="idpesanan" class="col-sm-3 control-label">Id Pesanan</label>
-                            <div class="col-sm-9">
-                                <input type="text" id="ID_Pesanan" placeholder="Id Pesanan" class="form-control" autofocus>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
                             <div class="col-sm-9">  
-                                <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control">
+                                <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control" readonly="">
                             </div>
                         </div>
                         <div class="form-group">
