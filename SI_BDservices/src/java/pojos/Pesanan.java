@@ -1,5 +1,5 @@
 package pojos;
-// Generated Nov 28, 2018 7:59:37 PM by Hibernate Tools 4.3.1
+// Generated Dec 3, 2018 7:26:33 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,38 +10,27 @@ import java.util.Date;
 public class Pesanan  implements java.io.Serializable {
 
 
-     private long idPesanan;
+     private Integer idPesanan;
      private int idDarah;
      private String namaRs;
      private String alamatRs;
      private Date tanggalPesan;
-     private String statusPesanan;
 
     public Pesanan() {
     }
 
-	
-    public Pesanan(long idPesanan, int idDarah, String namaRs, String alamatRs, Date tanggalPesan) {
-        this.idPesanan = idPesanan;
-        this.idDarah = idDarah;
-        this.namaRs = namaRs;
-        this.alamatRs = alamatRs;
-        this.tanggalPesan = tanggalPesan;
-    }
-    public Pesanan(long idPesanan, int idDarah, String namaRs, String alamatRs, Date tanggalPesan, String statusPesanan) {
-       this.idPesanan = idPesanan;
+    public Pesanan(int idDarah, String namaRs, String alamatRs, Date tanggalPesan) {
        this.idDarah = idDarah;
        this.namaRs = namaRs;
        this.alamatRs = alamatRs;
        this.tanggalPesan = tanggalPesan;
-       this.statusPesanan = statusPesanan;
     }
    
-    public long getIdPesanan() {
+    public Integer getIdPesanan() {
         return this.idPesanan;
     }
     
-    public void setIdPesanan(long idPesanan) {
+    public void setIdPesanan(Integer idPesanan) {
         this.idPesanan = idPesanan;
     }
     public int getIdDarah() {
@@ -71,13 +60,6 @@ public class Pesanan  implements java.io.Serializable {
     
     public void setTanggalPesan(Date tanggalPesan) {
         this.tanggalPesan = tanggalPesan;
-    }
-    public String getStatusPesanan() {
-        return this.statusPesanan;
-    }
-    
-    public void setStatusPesanan(String statusPesanan) {
-        this.statusPesanan = statusPesanan;
     }
 
 

@@ -1,5 +1,5 @@
 package pojos;
-// Generated Nov 28, 2018 7:59:37 PM by Hibernate Tools 4.3.1
+// Generated Dec 3, 2018 7:26:33 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class DataDarah  implements java.io.Serializable {
 
 
-     private int idDarah;
+     private Integer idDarah;
      private String golonganDarah;
      private String resus;
      private String pendonor;
@@ -22,16 +22,14 @@ public class DataDarah  implements java.io.Serializable {
     }
 
 	
-    public DataDarah(int idDarah, String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor) {
-        this.idDarah = idDarah;
+    public DataDarah(String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor) {
         this.golonganDarah = golonganDarah;
         this.resus = resus;
         this.pendonor = pendonor;
         this.tanggalDonor = tanggalDonor;
         this.alamatPendonor = alamatPendonor;
     }
-    public DataDarah(int idDarah, String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor, String status) {
-       this.idDarah = idDarah;
+    public DataDarah(String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor, String status) {
        this.golonganDarah = golonganDarah;
        this.resus = resus;
        this.pendonor = pendonor;
@@ -40,11 +38,11 @@ public class DataDarah  implements java.io.Serializable {
        this.status = status;
     }
    
-    public int getIdDarah() {
+    public Integer getIdDarah() {
         return this.idDarah;
     }
     
-    public void setIdDarah(int idDarah) {
+    public void setIdDarah(Integer idDarah) {
         this.idDarah = idDarah;
     }
     public String getGolonganDarah() {

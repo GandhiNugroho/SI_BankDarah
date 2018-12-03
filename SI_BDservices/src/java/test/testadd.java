@@ -19,12 +19,12 @@ public class testadd {
         try{
             
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-        Date date=format.parse("20181102");
+        Date date=format.parse("20180102");
         int idDarah=2;
-        String golonganDarah="";
+        String golonganDarah="B";
         String resus="Positif";
-        String pendonor="Nicodemus";
-         String alamatPendonor="jln.Anggur Merah";
+        String pendonor="hans";
+         String alamatPendonor="jln.kenangan";
          String status="habis";
          DataDarahHelper helper=new DataDarahHelper();
         helper.addNewDataDarah(idDarah,golonganDarah, resus, pendonor, date, alamatPendonor,status);

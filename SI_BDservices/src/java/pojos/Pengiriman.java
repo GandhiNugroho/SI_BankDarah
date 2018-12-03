@@ -1,5 +1,5 @@
 package pojos;
-// Generated Nov 28, 2018 7:59:37 PM by Hibernate Tools 4.3.1
+// Generated Dec 3, 2018 7:26:33 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,33 +10,32 @@ import java.util.Date;
 public class Pengiriman  implements java.io.Serializable {
 
 
-     private int idPengiriman;
-     private long idPesanan;
+     private Integer idPengiriman;
+     private int idPesanan;
      private Date tanggalKirim;
      private String statusPengiriman;
 
     public Pengiriman() {
     }
 
-    public Pengiriman(int idPengiriman, long idPesanan, Date tanggalKirim, String statusPengiriman) {
-       this.idPengiriman = idPengiriman;
+    public Pengiriman(int idPesanan, Date tanggalKirim, String statusPengiriman) {
        this.idPesanan = idPesanan;
        this.tanggalKirim = tanggalKirim;
        this.statusPengiriman = statusPengiriman;
     }
    
-    public int getIdPengiriman() {
+    public Integer getIdPengiriman() {
         return this.idPengiriman;
     }
     
-    public void setIdPengiriman(int idPengiriman) {
+    public void setIdPengiriman(Integer idPengiriman) {
         this.idPengiriman = idPengiriman;
     }
-    public long getIdPesanan() {
+    public int getIdPesanan() {
         return this.idPesanan;
     }
     
-    public void setIdPesanan(long idPesanan) {
+    public void setIdPesanan(int idPesanan) {
         this.idPesanan = idPesanan;
     }
     public Date getTanggalKirim() {
