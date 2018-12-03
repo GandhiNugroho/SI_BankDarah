@@ -6,10 +6,17 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Pesan Darah</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <!------ Include the above in your HEAD tag ---------->
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+        <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+        <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/responsive.css">
         <style>
 
             *[role="form"] {
@@ -30,124 +37,188 @@ and open the template in the editor.
                 text-transform: uppercase;
                 letter-spacing: 4px;
             }
-                table {
-                    font-family: arial, sans-serif;
-                    border-collapse: collapse;
-                    width: 40%;
-                    border: 1px;
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 40%;
+                border: 1px;
 
-                }
+            }
 
-                td, th {
-                    border: 1px solid #dddddd;
-                    text-align: left;
-                    padding: 10px;
-                    position: relative;
-                    right:-490px;
-                }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 10px;
+                position: relative;
+                right:-490px;
+            }
 
-                tr:nth-child(even) {
-                    background-color: #dddddd;
-                }
-
-
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
 
 
-            </style>
-        </head>
-        <body>
-            <br>
-
-        <div id="id01"></div>
-        <script>
-            var table;
 
 
-          
-                var xmlhttp = new XMLHttpRequest();
+        </style>
+    </head>
+    <body>
+        <div class="super_container">
 
-                var url = "http://localhost:8084/SI_BDservices/webresources/SI_BD";
+            <!-- Menu -->
 
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        myFunction(this.responseText);
+
+            <!-- Home -->
+
+            <div class="home">
+                <div class="background_image" style="background-image:url(sampuldarah.jpg)"></div>
+
+                <!-- Header -->
+
+                <header class="header" id="header">
+                    <div>
+                        <div class="header_top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+                                            <div class="logo">
+                                                <img src="logodarah.jpg" height="40" width="40" />	
+                                                <a href="#">Bank Darah</a>	
+                                            </div>
+
+                                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_nav" id="header_nav_pin">
+                            <div class="header_nav_inner">
+                                <div class="header_nav_container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                                                    <nav class="main_nav">
+                                                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                            <li><a href="index.html">Beranda</a></li>
+                                                            <li><a href="informasi.html">Informasi</a></li>													
+                                                            <li><a href="contact.html">Kontak</a></li>
+                                                            <li><a href="tambahdarah.html">Tambah Darah</a></li>
+                                                            <li class="active"><a href="pesandarah.html">Pesan Darah</a></li>
+                                                        </ul>
+                                                    </nav>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                </header>
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>
+
+                <div id="id01"></div>
+                <script>
+                    var table;
+
+
+
+                    var xmlhttp = new XMLHttpRequest();
+
+                    var url = "http://localhost:8084/SI_BDservices/webresources/SI_BD";
+
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            myFunction(this.responseText);
+                        }
                     }
-                }
-                xmlhttp.open("GET", url, true);
-                xmlhttp.send();
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
 
-                function myFunction(response) {
-                    var arr = JSON.parse(response);
-                    var i;
-                    var out = "<table id='table'><tr><th>ID DARAH</th><th>GOLONGAN DARAH</th><th>RESUS</th><th>PENDONOR</th><th>TANGGAL DONOR</th><th>ALAMAT PENDONOR</th><th>STATUS</th></tr>";
+                    function myFunction(response) {
+                        var arr = JSON.parse(response);
+                        var i;
+                        var out = "<table id='table'><tr><th>ID DARAH</th><th>GOLONGAN DARAH</th><th>RESUS</th><th>PENDONOR</th><th>TANGGAL DONOR</th><th>ALAMAT PENDONOR</th><th>STATUS</th></tr>";
 
-                    for (i = 0; i < arr.length; i++) {
-                        out += "<tr><td>" +
-                                arr[i].idDarah +
-                                "</td><td>" +
-                                arr[i].golonganDarah +
-                                "</td><td>" +
-                                arr[i].resus +
-                                "</td><td>" +
-                                arr[i].pendonor +
-                                "</td><td>" +
-                                arr[i].tanggalDonor +
-                                "</td><td>" +
-                                arr[i].alamatPendonor +
-                                "</td><td>" +
-                                arr[i].status;
+                        for (i = 0; i < arr.length; i++) {
+                            out += "<tr><td>" +
+                                    arr[i].idDarah +
+                                    "</td><td>" +
+                                    arr[i].golonganDarah +
+                                    "</td><td>" +
+                                    arr[i].resus +
+                                    "</td><td>" +
+                                    arr[i].pendonor +
+                                    "</td><td>" +
+                                    arr[i].tanggalDonor +
+                                    "</td><td>" +
+                                    arr[i].alamatPendonor +
+                                    "</td><td>" +
+                                    arr[i].status;
 
+                        }
+
+
+                        out += "</table>";
+                        document.getElementById("id01").innerHTML = out;
+                        table = document.getElementById('table');
+                        console.log(table.rows.length);
+                        $('#table tr').on('click', function () {
+                            console.log('OKKK');
+                            $("#idDarah").val($(this).find("td").eq(0).html());
+                            $("#nama").val($(this).find("td").eq(1).html());
+                            $("#spesialis").val($(this).find("td").eq(2).html());
+                        });
                     }
 
-
-                    out += "</table>";
-                    document.getElementById("id01").innerHTML = out;
-                    table = document.getElementById('table');
-                    console.log(table.rows.length);
-                    $('#table tr').on('click', function () {
-                        console.log('OKKK');
-                        $("#idDarah").val($(this).find("td").eq(0).html());
-                        $("#nama").val($(this).find("td").eq(1).html());
-                        $("#spesialis").val($(this).find("td").eq(2).html());
-                    });
-                }
-            
-        </script>
-        <div class="container">
-            <form class="form-horizontal" role="form">
-                <h2>Pesan Darah</h2>
-                <div class="form-group">
-                    <label for="idpesanan" class="col-sm-3 control-label">Id Pesanan</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="ID_Pesanan" placeholder="Id Pesanan" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
-                    <div class="col-sm-9">  
-                        <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Nama_RS" class="col-sm-3 control-label">Nama RS</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="Nama_Rs" placeholder="Nama RS" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Alamat_RS" class="col-sm-3 control-label">Alamat RS</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="Alamat_RS" placeholder="Alamat RS" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Tanggal_Pesan" class="col-sm-3 control-label">Tanggal Pesan</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="Tanggal_Pesan" placeholder="Tanggal Pesan" class="form-control" autofocus>
-                    </div>
-                </div>
-              <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form> <!-- /form -->
-        </div> <!-- ./container -->
-    </body>
-</html>
+                </script>
+                <div class="container">
+                    <form class="form-horizontal" role="form">
+                        <h2>Pesan Darah</h2>
+                        <div class="form-group">
+                            <label for="idpesanan" class="col-sm-3 control-label">Id Pesanan</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="ID_Pesanan" placeholder="Id Pesanan" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
+                            <div class="col-sm-9">  
+                                <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Nama_RS" class="col-sm-3 control-label">Nama RS</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="Nama_Rs" placeholder="Nama RS" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Alamat_RS" class="col-sm-3 control-label">Alamat RS</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="Alamat_RS" placeholder="Alamat RS" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Tanggal_Pesan" class="col-sm-3 control-label">Tanggal Pesan</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="Tanggal_Pesan" placeholder="Tanggal Pesan" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form> <!-- /form -->
+                </div> <!-- ./container -->
+                </body>
+                </html>

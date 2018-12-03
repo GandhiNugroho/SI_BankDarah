@@ -44,145 +44,146 @@ and open the template in the editor.
     <body>
         <div class="super_container">
 
-	<!-- Menu -->
+            <!-- Menu -->
 
-	
-	<!-- Home -->
 
-	<div class="home">
-		<div class="background_image" style="background-image:url(sampuldarah.jpg)"></div>
+            <!-- Home -->
 
-		<!-- Header -->
+            <div class="home">
+                <div class="background_image" style="background-image:url(sampuldarah.jpg)"></div>
 
-		<header class="header" id="header">
-			<div>
-				<div class="header_top">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-									<div class="logo">
-									 <img src="logodarah.jpg" height="40" width="40" />	
-                                                                            <a href="#">Bank Darah</a>	
-									</div>
-								
-									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="header_nav" id="header_nav_pin">
-					<div class="header_nav_inner">
-						<div class="header_nav_container">
-							<div class="container">
-								<div class="row">
-									<div class="col">
-										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-											<nav class="main_nav">
-												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="index.html">Beranda</a></li>
-													<li><a href="informasi.html">Informasi</a></li>													
-													<li><a href="contact.html">Kontak</a></li>
-													<li><a href="tambahdarah.html">Tambah Darah</a></li>
-												</ul>
-											</nav>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</header>
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-        <br>
-        <div class="container">
-            <form class="form-horizontal" role="form" onsubmit="return make_json(this)" method="POST">
-                <h2>Tambah Darah</h2>
-                <div class="form-group">
-                    <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="ID_Darah" placeholder="Id Darah" class="form-control" autofocus>
+                <!-- Header -->
+
+                <header class="header" id="header">
+                    <div>
+                        <div class="header_top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+                                            <div class="logo">
+                                                <img src="logodarah.jpg" height="40" width="40" />	
+                                                <a href="#">Bank Darah</a>	
+                                            </div>
+
+                                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_nav" id="header_nav_pin">
+                            <div class="header_nav_inner">
+                                <div class="header_nav_container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                                                    <nav class="main_nav">
+                                                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                                                            <li><a href="index.html">Beranda</a></li>
+                                                            <li><a href="informasi.html">Informasi</a></li>													
+                                                            <li><a href="contact.html">Kontak</a></li>
+                                                            <li class="active"><a href="tambahdarah.html">Tambah Darah</a></li>
+                                                            <li><a href="pesandarah.html">Pesan Darah</a></li>
+                                                        </ul>
+                                                    </nav>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>	
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="Golongan_Darah" class="col-sm-3 control-label">Golongan Darah</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Golongan_Darah" placeholder="Golongan Darah" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Resus" class="col-sm-3 control-label">Resus</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Resus" placeholder="Resus" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Pendonor" class="col-sm-3 control-label">Pendonor</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Pendonor" placeholder="Pendonor" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Tanggal_Donor" class="col-sm-3 control-label">Tanggal Donor</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Tanggal_Donor" placeholder="Tanggal_Donor" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Alamat_Pendonor" class="col-sm-3 control-label">Alamat Pendonor</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Alamat_Pendonor" placeholder="Alamat Pendonor" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Status" class="col-sm-3 control-label">Status</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="Status" placeholder="Status" class="form-control" autofocus>
-                    </div>
-                </div>
+                </header>
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>        
+                <br>
+                <div class="container">
+                    <form class="form-horizontal" role="form" onsubmit="return make_json(this)" method="POST">
+                        <h2>Tambah Darah</h2>
+                        <div class="form-group">
+                            <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="ID_Darah" placeholder="Id Darah" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Golongan_Darah" class="col-sm-3 control-label">Golongan Darah</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Golongan_Darah" placeholder="Golongan Darah" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Resus" class="col-sm-3 control-label">Resus</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Resus" placeholder="Resus" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Pendonor" class="col-sm-3 control-label">Pendonor</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Pendonor" placeholder="Pendonor" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Tanggal_Donor" class="col-sm-3 control-label">Tanggal Donor</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Tanggal_Donor" placeholder="Tanggal_Donor" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Alamat_Pendonor" class="col-sm-3 control-label">Alamat Pendonor</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Alamat_Pendonor" placeholder="Alamat Pendonor" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Status" class="col-sm-3 control-label">Status</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Status" placeholder="Status" class="form-control" autofocus>
+                            </div>
+                        </div>
 
 
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
 
-            </form> <!-- /form -->
-            <pre id="output">
+                    </form> <!-- /form -->
+                    <pre id="output">
 
-            </pre>
-            <script>
-                function make_json(form) {
-                    var json = {
-                        "idDarah": parseInt(form.ID_Darah.value, 10),
-                        "golonganDarah": form.Golongan_Darah.value,
-                        "resus": form.Resus.value,
-                        "pendonor": form.Pendonor.value,
-                        "tanggalDonor": form.Tanggal_Donor.value,
-                        "alamatPendonor": form.Alamat_Pendonor.value,
-                        "status": form.Status.value
+                    </pre>
+                    <script>
+                        function make_json(form) {
+                            var json = {
+                                "idDarah": parseInt(form.ID_Darah.value, 10),
+                                "golonganDarah": form.Golongan_Darah.value,
+                                "resus": form.Resus.value,
+                                "pendonor": form.Pendonor.value,
+                                "tanggalDonor": form.Tanggal_Donor.value,
+                                "alamatPendonor": form.Alamat_Pendonor.value,
+                                "status": form.Status.value
 
-                    };
+                            };
 
-                    var html = JSON.stringify(json, 0, 100);
-                    var Url = "http://202.94.83.190:8080/SI_BDservices/webresources/SI_BD/addDarah";
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("POST", Url, false);
-                    xhr.setRequestHeader("Content-type", "application/json");
-                    xhr.send(html);
+                            var html = JSON.stringify(json, 0, 100);
+                            var Url = "http://202.94.83.190:8080/SI_BDservices/webresources/SI_BD/addDarah";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", Url, false);
+                            xhr.setRequestHeader("Content-type", "application/json");
+                            xhr.send(html);
 
-                    document.getElementById("output").innerHTML = html;
-                    return false;
-                }
-            </script>
-        </div> <!-- ./container -->
-    </body>
-</html>
+                            document.getElementById("output").innerHTML = html;
+                            return false;
+                        }
+                    </script>
+                </div> <!-- ./container -->
+                </body>
+                </html>
