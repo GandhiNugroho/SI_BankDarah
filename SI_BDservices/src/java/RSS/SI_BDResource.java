@@ -72,7 +72,7 @@ public class SI_BDResource {
         Gson gson = new Gson();
         DataDarah datadarah = gson.fromJson(data, DataDarah.class);
         DataDarahHelper helper = new DataDarahHelper();
-        helper.addNewDataDarah(datadarah.getIdDarah(),
+        helper.addNewDataDarah(
                 datadarah.getGolonganDarah(),
                 datadarah.getResus(),
                 datadarah.getPendonor(),

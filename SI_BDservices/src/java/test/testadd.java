@@ -20,14 +20,13 @@ public class testadd {
             
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date date=format.parse("20180102");
-        int idDarah=2;
         String golonganDarah="B";
         String resus="Positif";
         String pendonor="hans";
          String alamatPendonor="jln.kenangan";
          String status="habis";
          DataDarahHelper helper=new DataDarahHelper();
-        helper.addNewDataDarah(idDarah,golonganDarah, resus, pendonor, date, alamatPendonor,status);
+        helper.addNewDataDarah(golonganDarah, resus, pendonor, date, alamatPendonor,status);
         
         }catch(ParseException ex){
             
