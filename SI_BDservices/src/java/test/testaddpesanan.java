@@ -27,7 +27,7 @@ public class testaddpesanan {
             String alamatRs="Jln.Singkarak";
             String status="Ditolak";
             PesananHelper helper = new PesananHelper();
-            helper.addNewPesanan(idPesanan, idDarah, namaRs, alamatRs, tanggalPesan,status);
+            helper.addNewPesanan(idDarah, namaRs, alamatRs, tanggalPesan);
 
         } catch (ParseException ex) {
 
