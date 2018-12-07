@@ -35,7 +35,7 @@ public class DataDarahHelper {
   ){
          Session session = NewHibernateUtil.getSessionFactory().openSession();
            Transaction tx = session.beginTransaction();
-           DataDarah datadarah=new DataDarah(golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor, status);
+           DataDarah datadarah=new DataDarah(golonganDarah, resus, pendonor, tanggalDonor, alamatPendonor, status="tersedia");
            session.saveOrUpdate(datadarah);
            tx.commit();
            session.close();
