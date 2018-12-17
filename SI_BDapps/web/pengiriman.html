@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PENGIRIMAN</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="css/Montserrat.css" rel="stylesheet">
+  <link href="css/Kaushan.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="css/Droid.css" rel="stylesheet">
+  <link href="css/Roboto.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.min.css" rel="stylesheet">
+          <style>
+
+            *[role="form"] {
+                max-width: 530px;
+                padding: 15px;
+                margin: 0 auto;
+                border-radius: 0.3em;
+                background-color: #f2f2f2;
+            }
+
+            *[role="form"] h2 { 
+                font-family: 'Open Sans' , sans-serif;
+                font-size: 40px;
+                font-weight: 600;
+                color: #000000;
+                margin-top: 5%;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 40%;
+                border: 2px solid black;
+                color: black;
+            }
+
+
+            td, th {
+                /*border: 1px solid #dddddd;*/
+                border: 2px solid black;
+                text-align: left;
+                padding: 10px;
+                position: relative;
+                right:-15px;
+                color: black;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+
+
+
+        </style>
+</head>
+
+<body id="page-top">
+
+  
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index2.html">BANK DARAH</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">WELCOME</div>
+          <div class="intro-heading text-uppercase">BANK DARAH INDONESIA</div>
+        </div>
+      </div>
+    </header>
+
+<br>
+ <div id="id01"></div>
+                <script>
+                    var table;
+                    var xmlhttp = new XMLHttpRequest();
+                    var url = "http://202.94.83.190:8080/SI_BDservices_165314079_165314083/webresources/pesanan";
+
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            myFunction(this.responseText);
+                        }
+                    }
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
+
+                    function myFunction(response) {
+                        var arr = JSON.parse(response);
+                        var i;
+                        var out = "<CENTER><table id='table'><tr><th>ID PESANAN</th><th>NAMA RUMAH SAKIT</th>\n\<th>ALAMAT RUMAH SAKIT</th><th>TANGGAL PESAN</th></tr></CENTER>";
+
+                        for (i = 0; i < arr.length; i++) {
+                            out += "<tr><td>" +
+                                    arr[i].idPesanan +
+                                    "</td><td>" +
+                                    arr[i].namaRs +
+                                    "</td><td>" +
+                                    arr[i].alamatRs +
+                                    "</td><td>" +
+                                    arr[i].tanggalPesan;
+
+                        }
+
+
+                        out += "</table>";
+                        document.getElementById("id01").innerHTML = out;
+                        table = document.getElementById('table');
+                        console.log(table.rows.length);
+                        $('#table tr').on('click', function () {
+                            console.log('OKKK');
+                            $("#idpesanan").val($(this).find("td").eq(0).html());
+
+
+                        });
+                    }
+
+
+                </script>
+  <br>
+                <div class="container">
+                    <form class="form-horizontal" role="form" onsubmit="return make_json(this)" method="POST">
+                        <h2>Pengiriman</h2>
+                        <div class="form-group">
+                            <label for="idpesanan" class="col-sm-3 control-label">Id Pesanan</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="idpesanan" placeholder="Id pesanan" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggalkirim" class="col-sm-3 control-label">Tanggal Kirim</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="tanggalkirim" placeholder="Tanggal Kirim" class="form-control" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="statuspengiriman" class="col-sm-3 control-label">Status Pengiriman</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="statuspengiriman" placeholder="Status Pengiriman" class="form-control" autofocus>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">OK</button>
+
+                    </form> <!-- /form -->
+                    <script>
+                        function make_json(form) {
+                            var json = {
+                                "idPesanan": form.idpesanan.value,
+                                "tanggalKirim": form.tanggalkirim.value,
+                                "statusPengiriman": form.statuspengiriman.value
+
+                            };
+
+                            var html = JSON.stringify(json, 0, 100);
+                            var Url = "http://202.94.83.190:8080/SI_BDservices_165314079_165314083/webresources/pengiriman/addPengiriman";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", Url, false);
+                            xhr.setRequestHeader("Content-type", "application/json");
+                            xhr.send(html);
+
+                            document.getElementById("output").innerHTML = alert("Pengiriman berhasil ditambahkan");
+                            return false;
+                        }
+                    </script>
+                </div>
+<br>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="copyright">Copyright &copy; Bank Darah 2018</span>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Custom scripts for this template -->
+<script src="js/agency.min.js"></script>
+
+</body>
+
+</html>

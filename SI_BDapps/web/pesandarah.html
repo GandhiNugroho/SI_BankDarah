@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Pesan Darah</title>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <!------ Include the above in your HEAD tag ---------->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-        <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-        <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-        <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-         <script src="vendor/jquery/jquery.min.js"></script>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PESAN DARAH</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="css/Montserrat.css" rel="stylesheet">
+  <link href="css/Kaushan.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="css/Droid.css" rel="stylesheet">
+  <link href="css/Roboto.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.min.css" rel="stylesheet">
         <style>
 
             *[role="form"] {
@@ -45,7 +48,7 @@ and open the template in the editor.
                 border: 2px solid black;
                 color: black;
             }
-           
+
 
             td, th {
                 /*border: 1px solid #dddddd;*/
@@ -53,7 +56,7 @@ and open the template in the editor.
                 text-align: left;
                 padding: 10px;
                 position: relative;
-                right:-490px;
+                right:-40px;
                 color: black;
             }
 
@@ -65,82 +68,41 @@ and open the template in the editor.
 
 
         </style>
-    </head>
-    <body>
-        <div class="super_container">
+</head>
 
-            <!-- Menu -->
+<body id="page-top">
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">BANK DARAH</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-            <!-- Home -->
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">WELCOME</div>
+          <div class="intro-heading text-uppercase">BANK DARAH INDONESIA</div>
+        </div>
+      </div>
+    </header>
 
-            <div class="home">
-                <div class="background_image" style="background-image:url(sampuldarah.jpg)"></div>
-
-                <!-- Header -->
-
-                <header class="header" id="header">
-                    <div>
-                        <div class="header_top">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-                                            <div class="logo">
-                                                <img src="logodarah.jpg" height="40" width="40" />	
-                                                <a href="#">Bank Darah</a>	
-                                            </div>
-
-                                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header_nav" id="header_nav_pin">
-                            <div class="header_nav_inner">
-                                <div class="header_nav_container">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-                                                    <nav class="main_nav">
-                                                        <ul class="d-flex flex-row align-items-center justify-content-start">
-                                                            <li><a href="index.html">Beranda</a></li>
-                                                            <li><a href="informasi.html">Informasi</a></li>													
-                                                            <li><a href="contact.html">Kontak</a></li>
-                                                            <li><a href="tambahdarah.html">Tambah Darah</a></li>
-                                                            <li class="active"><a href="pesandarah.html">Pesan Darah</a></li>
-                                                        </ul>
-                                                    </nav>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>	
-                    </div>
-                </header>
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>        
-                <br>
-
-                <div id="id01"></div>
+  <br>
+ <div id="id01"></div>
                 <script>
                     var table;
-
-
-
                     var xmlhttp = new XMLHttpRequest();
-                    var url= "http://202.94.83.190:8080/SI_BDservices/webresources/SI_BD";
+                    var url = "http://202.94.83.190:8080/SI_BDservices_165314079_165314083/webresources/SI_BD";
 
                     xmlhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
@@ -153,7 +115,8 @@ and open the template in the editor.
                     function myFunction(response) {
                         var arr = JSON.parse(response);
                         var i;
-                        var out = "<table id='table'><tr><th>ID DARAH</th><th>GOLONGAN DARAH</th><th>RESUS</th><th>PENDONOR</th><th>TANGGAL DONOR</th><th>ALAMAT PENDONOR</th><th>STATUS</th></tr>";
+                        var out = "<CENTER><table id='table'><tr><th>ID DARAH</th><th>GOLONGAN DARAH</th>\n\
+                <th>RESUS</th></tr></CENTER>";
 
                         for (i = 0; i < arr.length; i++) {
                             out += "<tr><td>" +
@@ -161,15 +124,7 @@ and open the template in the editor.
                                     "</td><td>" +
                                     arr[i].golonganDarah +
                                     "</td><td>" +
-                                    arr[i].resus +
-                                    "</td><td>" +
-                                    arr[i].pendonor +
-                                    "</td><td>" +
-                                    arr[i].tanggalDonor +
-                                    "</td><td>" +
-                                    arr[i].alamatPendonor +
-                                    "</td><td>" +
-                                    arr[i].status;
+                                    arr[i].resus;
 
                         }
 
@@ -180,42 +135,150 @@ and open the template in the editor.
                         console.log(table.rows.length);
                         $('#table tr').on('click', function () {
                             console.log('OKKK');
-                            $("#ID_Darah").val($(this).find("td").eq(0).html());
-                           
+                            $("#iddarah").val($(this).find("td").eq(0).html());
+
+
                         });
                     }
+
 
                 </script>
                 <br>
                 <div class="container">
-                    <form class="form-horizontal" role="form">
-                        <h2>Pesan Darah</h2>
+                    <form class="form-horizontal" role="form" onsubmit="return make_json(this),make_json2(this)" method="POST">
+                        <h2>Tambah Darah</h2>
                         <div class="form-group">
-                            <label for="ID_Darah" class="col-sm-3 control-label">Id Darah</label>
-                            <div class="col-sm-9">  
-                                <input type="text" id="ID_Darah" placeholder="ID Darah" class="form-control" readonly="">
+                            <label for="ID_darah" class="col-sm-3 control-label">ID Darah</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="iddarah" placeholder="ID Darah" class="form-control" autofocus readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Nama_RS" class="col-sm-3 control-label">Nama RS</label>
+                            <label for="namars" class="col-sm-3 control-label">Nama RS</label>
                             <div class="col-sm-9">
-                                <input type="text" id="Nama_Rs" placeholder="Nama RS" class="form-control">
+                                <input type="text" name="namars" placeholder="Nama RS" class="form-control" autofocus>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="Alamat_RS" class="col-sm-3 control-label">Alamat RS</label>
+                            <label for="alamatrs" class="col-sm-3 control-label">Alamat RS</label>
                             <div class="col-sm-9">
-                                <input type="text" id="Alamat_RS" placeholder="Alamat RS" class="form-control" autofocus>
+                                <input type="text" name="alamatrs" placeholder="Alamat RS" class="form-control" autofocus>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Tanggal_Pesan" class="col-sm-3 control-label">Tanggal Pesan</label>
                             <div class="col-sm-9">
-                                <input type="text" id="Tanggal_Pesan" placeholder="Tanggal Pesan" class="form-control" autofocus>
+                                <input type="date" name="Tanggal_Pesan" placeholder="Tanggal Pesan" class="form-control" autofocus>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+                        <div class="form-group">
+                            <label for="status" class="col-sm-3 control-label">Status</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="status" placeholder="status" class="form-control" autofocus>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Pesan</button>
+
+
                     </form> <!-- /form -->
-                </div> <!-- ./container -->
-                </body>
-                </html>
+<pre id="output"></pre>
+                    <script>
+                        function make_json(form) {
+                            var json = {
+                                "idDarah": form.iddarah.value,
+                                "namaRs": form.namars.value,
+                                "alamatRs": form.alamatrs.value,
+                                "tanggalPesan": form.Tanggal_Pesan.value
+
+                            };
+
+                            var html = JSON.stringify(json, 0, 100);
+                            var Url = "http://202.94.83.190:8080/SI_BDservices_165314079_165314083/webresources/pesanan/addPesanan";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", Url, false);
+                            xhr.setRequestHeader("Content-type", "application/json");
+                            xhr.send(html);
+
+                            document.getElementById("output").innerHTML =html;
+                            return false;
+                        }
+                        
+
+                    </script>
+                    <script>
+                        function make_json2(form) {
+                            var json = {
+                                "idDarah": form.iddarah.value,
+                                "status": form.status.value
+
+                            };
+
+                            var html = JSON.stringify(json, 0, 100);
+                            var Url = "http://202.94.83.190:8080/SI_BDservices_165314079_165314083/webresources/SI_BD/addDarah2";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", Url, false);
+                            xhr.setRequestHeader("Content-type", "application/json");
+                            xhr.send(html);
+
+                            document.getElementById("output").innerHTML = html;
+                            return false;
+                        }
+                    </script>
+                    
+                </div>
+<br>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="copyright">Copyright &copy; Bank Darah 2018</span>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Custom scripts for this template -->
+<script src="js/agency.min.js"></script>
+
+</body>
+
+</html>
