@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(RSS.PengirimanResource.class);
         resources.add(RSS.PesananResource.class);
         resources.add(RSS.SI_BDResource.class);
         resources.add(RSS.UserResource.class);

@@ -13,6 +13,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -23,7 +24,7 @@ import pojos.User;
  *
  * @author asus
  */
- @Path("user")
+@Path("user")
 public class UserResource {
 
     @Context
@@ -63,17 +64,10 @@ public class UserResource {
 //    @Consumes("application/json")
 //    public void putJson(String content) {
 //    }
-    @POST
+    @GET
     @Path("login")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response login(String data) {
-        Gson gson = new Gson();
-        User user = gson.fromJson(data, User.class);
-        UserHelper helper = new UserHelper();
-        helper.getUser(user.getUsername(), user.getPassword());
-        return Response
-                .status(200)
-                .entity(helper.getUser(user.getUsername(), user.getPassword()))
-                .build();
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getJson(@QueryParam("username") String username, @QueryParam("password") String password) {
+        return new Gson().toJson(new UserHelper().login(username, password));
     }
 }

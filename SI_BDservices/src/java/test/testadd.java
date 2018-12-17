@@ -17,16 +17,16 @@ import java.util.Date;
 public class testadd {
     public static void main(String[] args) throws ParseException{
         try{
-            
+            Integer iddarah=2;
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         Date date=format.parse("20180102");
         String golonganDarah="A";
         String resus="Negatif";
-        String pendonor="muliana";
+        String pendonor="husor";
          String alamatPendonor="jln.gembira";
-         String status="";
+         String status="habis";
          DataDarahHelper helper=new DataDarahHelper();
-        helper.addNewDataDarah(golonganDarah, resus, pendonor, date, alamatPendonor,status);
+        helper.addNewDataDarah(iddarah,golonganDarah, resus, pendonor, date, alamatPendonor,status);
         
         }catch(ParseException ex){
             

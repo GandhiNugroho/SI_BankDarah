@@ -72,7 +72,7 @@ public class SI_BDResource {
         Gson gson = new Gson();
         DataDarah datadarah = gson.fromJson(data, DataDarah.class);
         DataDarahHelper helper = new DataDarahHelper();
-        helper.addNewDataDarah(
+        helper.addNewDataDarah(datadarah.getIdDarah(),
                 datadarah.getGolonganDarah(),
                 datadarah.getResus(),
                 datadarah.getPendonor(),
@@ -82,5 +82,15 @@ public class SI_BDResource {
         return Response.status(200).entity(datadarah).build();
     }
 
-
+      @POST
+    @Path("addDarah2")
+    @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+    public Response AddNewDarah2(String data) {
+        Gson gson = new Gson();
+        DataDarah datadarah = gson.fromJson(data, DataDarah.class);
+        DataDarahHelper helper = new DataDarahHelper();
+        helper.addNewDataDarah2(datadarah.getIdDarah(),
+                datadarah.getStatus());
+        return Response.status(200).entity(datadarah).build();
+    }
 }

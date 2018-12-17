@@ -1,5 +1,5 @@
 package pojos;
-// Generated Dec 3, 2018 8:05:09 PM by Hibernate Tools 4.3.1
+// Generated Dec 17, 2018 1:43:05 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -21,7 +21,20 @@ public class DataDarah  implements java.io.Serializable {
     public DataDarah() {
     }
 
-	
+    public DataDarah(Integer idDarah ,String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor,String status) {
+        this.golonganDarah = golonganDarah;
+        this.resus = resus;
+        this.pendonor = pendonor;
+        this.tanggalDonor = tanggalDonor;
+        this.alamatPendonor = alamatPendonor;
+        this.idDarah=idDarah;
+        this.status=status;
+    }
+    public DataDarah(Integer idDarah,String status){
+        this.idDarah=idDarah;
+        this.status=status;
+    }
+    
     public DataDarah(String golonganDarah, String resus, String pendonor, Date tanggalDonor, String alamatPendonor) {
         this.golonganDarah = golonganDarah;
         this.resus = resus;
